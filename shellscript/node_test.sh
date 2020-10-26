@@ -5,7 +5,7 @@ launch_file=auto_generated.launch
 node_num=5
 
 # build
-cd ~/ros1
+roscd ; cd ..
 # catkin build
 # . ./devel/setup.bash
 # sleep 5s
@@ -20,11 +20,12 @@ sleep 5s
 # generate launch file
 if [ 'auto_generated.launch' = ${launch_file} ] ; then
     echo launch file auto-generated
-    . ~/ros1/src/ros1_test/shellscript/tools/launch_generator.sh $node_num
+    roscd ; cd ../src/ros1_test/shellscript/tools
+    . launch_generator.sh $node_num
 fi
 # 
 # launch
-cd ~/ros1/src/ros1_test/launch
+roscd ; cd ../src/ros1_test/launch
 sleep 1s
 #
 timeout -s SIGINT 100s roslaunch $launch_file
