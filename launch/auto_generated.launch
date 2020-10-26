@@ -1,0 +1,32 @@
+<launch>
+    <node pkg='ros1_test' name='delay_test_pub_1' type='node_num_test_pub.py'>
+        <param name='node_num' value='1' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_pub_2' type='node_num_test_pub.py'>
+        <param name='node_num' value='2' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_pub_3' type='node_num_test_pub.py'>
+        <param name='node_num' value='3' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_pub_4' type='node_num_test_pub.py'>
+        <param name='node_num' value='4' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_pub_5' type='node_num_test_pub.py'>
+        <param name='node_num' value='5' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_sub_1' type='node_num_test_sub.py'>
+        <param name='node_num' value='1' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_sub_2' type='node_num_test_sub.py'>
+        <param name='node_num' value='2' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_sub_3' type='node_num_test_sub.py'>
+        <param name='node_num' value='3' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_sub_4' type='node_num_test_sub.py'>
+        <param name='node_num' value='4' />
+    </node>
+    <node pkg='ros1_test' name='delay_test_sub_5' type='node_num_test_sub.py'>
+        <param name='node_num' value='5' />
+    </node>
+</launch>
