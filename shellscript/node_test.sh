@@ -27,7 +27,7 @@ fi
 cd ~/ros1/src/ros1_test/launch
 sleep 1s
 #
-roslaunch $launch_file
+timeout -s SIGINT 100s roslaunch $launch_file
 #     sleep 30s
 #     cd ~/Document
 #     mv

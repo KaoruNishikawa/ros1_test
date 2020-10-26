@@ -5,4 +5,6 @@
     <node pkg="ros1_test" name="delay_test_sub" type="node_num_test_sub.py">
         <param name="~node_num" value="5" />
     </node>
+    <node pkg="ros1_test" name="cpu_checker" type="node_num_test_cpu.py" />
+    <node pkg="ros1_test" name="mem_checker" type="node_num_test_mem.py" />
 </launch>

@@ -12,7 +12,8 @@ class node_num_test_sub(object):
     def __init__(self):
         self.num = str(rospy.get_param('~node_num'))
         self.f = open(f"{os.environ['HOME']}/Documents/test_node_num_{self.num}.txt", "w")
-        self.my_sub = rospy.Subscriber("/test/node_num_"+self.num, Float64, self.sub_callback, queue_size=1)
+        my_sub = rospy.Subscriber("/test/node_num_"+self.num, Float64, self.sub_callback, queue_size=1)
+        rospy.spin()
 
     def sub_callback(self, timer):
         cur_time = time.time()
@@ -25,7 +26,7 @@ def main(args=None):
     rospy.init_node(node_name)
     sub = node_num_test_sub()
     # pub.my_publisher()
-    rospy.spin()
+    # rospy.spin()
 
 
 if __name__ == "__main__":
