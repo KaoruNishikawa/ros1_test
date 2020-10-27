@@ -27,7 +27,7 @@ do
     # 
     timeout -s SIGINT 100s roslaunch $launch_file
     sleep 30s
-    cd ~/Document
+    cd ~/Documents
     node_num=`printf "%03g" $node_num`
     mv -i cpu_used.txt cpu_used_$node_num.txt && :
     mv -i mem_used.txt mem_used_$node_num.txt && :
