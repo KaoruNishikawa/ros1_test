@@ -2,7 +2,6 @@
 
 # specify which file to launch
 launch_file=auto_generated.launch
-node_num=5
 
 # build
 roscd ; cd ..
@@ -18,10 +17,10 @@ sleep 5s
 for node_num in 1 20 40 60 80 100 120 140 160 180 200 220 240 260 280 300 320 340 360 380 400
 do
     # generate launch file
-    if [ 'auto_generated.launch' = ${launch_file} ] ; then
-        echo launch file auto-generated
+    if [ ${launch_file} = 'auto_generated.launch' ] ; then
         roscd ros1_test/shellscript/tools
         . launch_generator.sh $node_num
+        echo launch file auto-generated
     fi
     roscd ros1_test/launch
     sleep 1s
