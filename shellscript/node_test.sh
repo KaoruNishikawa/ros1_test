@@ -45,8 +45,8 @@ mv mem_used_* ./$dirname/data
 mv delay_* ./$dirname/data
 
 # record settings
-cd roscd ros1_test/shellscript
-cp ./* ~/Documents/$dirname/
+roscd ros1_test/shellscript
+cp -r ./* ~/Documents/$dirname/
 cp ../launch/$launch_file ~/Documents/$dirname/
 
 # kill roscore
