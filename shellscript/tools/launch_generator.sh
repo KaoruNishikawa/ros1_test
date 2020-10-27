@@ -3,7 +3,7 @@
 node_num=$1
 
 # specify which launch file to edit
-cd ~/ros1/src/ros1_test/launch
+roscd ros1_test/launch
 launch_file=auto_generated.launch
 
 # delete present
