@@ -10,6 +10,7 @@ class dummy_node(object):
 
     def __init__(self):
         self.num = str(rospy.get_param('~node_num'))
+        rospy.spin()
 
 
 def main(args=None):
