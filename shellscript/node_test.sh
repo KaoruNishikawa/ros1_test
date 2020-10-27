@@ -48,6 +48,10 @@ mv delay_* ./$dirname/data
 roscd ros1_test/shellscript
 cp -r ./* ~/Documents/$dirname/
 cp ../launch/$launch_file ~/Documents/$dirname/
+mkdir ~/Documents/$dirname/scripts
+cp -r ../ros1_test/* ~/Documents/$dirname/scripts/
+cp ../CMakeLists.txt ~/Documents/$dirname/
+cp ../package.xml ~/Documents/$dirname/
 
 # kill roscore
 pid=$(lsof | grep roscore | sed "s/.*roscore//" | sed "2,\$d" | sed "s/$USERNAME.*//")
