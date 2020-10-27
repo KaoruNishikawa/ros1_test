@@ -49,6 +49,10 @@ cd roscd ros1_test/shellscript
 cp ./* ~/Documents/$dirname/
 cp ../launch/$launch_file ~/Documents/$dirname/
 
+# kill roscore
+pid=$(lsof | grep roscore | sed "s/.*roscore//" | sed "2,\$d" | sed "s/$USERNAME.*//")
+kill -SIGINT $pid
+
 # back to initial directory
 cd ../shellscript
 
