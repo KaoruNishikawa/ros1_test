@@ -4,6 +4,7 @@ node_name = "cpu_checker"
 
 import rospy
 import os
+import psutil
 import subprocess
 from std_msgs.msg import Float64
 
@@ -16,11 +17,12 @@ class cpu_checker(object):
     def checker(self):
         while not rospy.is_shutdown():
             try:
-                top_command = 'top -b -n1'
-                command_cpu = 'grep Cpu'
-                res_cpu1 = subprocess.Popen(top_command.split(' '), stdout=subprocess.PIPE)
-                res_cpu2 = subprocess.Popen(command_cpu.split(' '), stdin=res_cpu1.stdout, stdout=subprocess.PIPE)
-                res_cpu = res_cpu2.communicate()[0]
+                # top_command = 'top -b -n1'
+                # command_cpu = 'grep Cpu'
+                # res_cpu1 = subprocess.Popen(top_command.split(' '), stdout=subprocess.PIPE)
+                # res_cpu2 = subprocess.Popen(command_cpu.split(' '), stdin=res_cpu1.stdout, stdout=subprocess.PIPE)
+                # res_cpu = res_cpu2.communicate()[0]
+                res_cpu = psutil.cpu_percent(interval=0.5)
             except:
                 res_cpu = ""
             self.f_cpu.write(str(res_cpu)+'\n')
