@@ -1,10 +1,16 @@
 <launch>
     <node pkg="ros1_test" name="delay_test_pub" type="node_num_test_pub.py">
-        <param name="~node_num" value="5" />
+        <param name="~node_num" value="0" />
     </node>
     <node pkg="ros1_test" name="delay_test_sub" type="node_num_test_sub.py">
-        <param name="~node_num" value="5" />
+        <param name="~node_num" value="0" />
     </node>
     <node pkg="ros1_test" name="cpu_checker" type="node_num_test_cpu.py" />
     <node pkg="ros1_test" name="mem_checker" type="node_num_test_mem.py" />
+    <node pkg="ros1_test" name="net_checker" type="node_num_test_net.py" />
+    <node pkg='ros1_test' name='delay_test_pub' type='node_num_test_pub.py'>
+        <param name='node_num' value='0' />
+    <node pkg='ros1_test' name='delay_test_sub' type='node_num_test_sub.py'>
+        <param name='node_num' value='0' />
+    </node>
 </launch>

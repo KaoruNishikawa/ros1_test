@@ -35,6 +35,7 @@ done
 # RECORDER
 echo "    <node pkg='ros1_test' name='cpu_checker' type='node_num_test_cpu.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='mem_checker' type='node_num_test_mem.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='net_checker' type='node_num_test_net.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='delay_test_pub' type='node_num_test_pub.py'>" >> $launch_file
 echo "        <param name='node_num' value='0' />" >> $launch_file
 echo "    </node>" >> $launch_file
