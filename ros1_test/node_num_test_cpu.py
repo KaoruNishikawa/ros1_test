@@ -12,7 +12,7 @@ class cpu_checker(object):
 
     def __init__(self):
         self.f_cpu = open(f"{os.environ['HOME']}/Documents/cpu_used.txt", "w")
-        self.rate = rospy.Rate(1)
+        self.rate = rospy.Rate(0.5)
 
     def checker(self):
         while not rospy.is_shutdown():

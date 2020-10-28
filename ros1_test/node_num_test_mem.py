@@ -12,7 +12,7 @@ class mem_checker(object):
 
     def __init__(self):
         self.f_mem = open(f"{os.environ['HOME']}/Documents/mem_used.txt", "w")
-        self.rate = rospy.Rate(1)
+        self.rate = rospy.Rate(0.5)
 
     def checker(self):
         while not rospy.is_shutdown():
