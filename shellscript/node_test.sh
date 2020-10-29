@@ -54,6 +54,7 @@ mkdir ~/Documents/$dirname/scripts
 cp -r ../ros1_test/* ~/Documents/$dirname/scripts/
 cp ../CMakeLists.txt ~/Documents/$dirname/
 cp ../package.xml ~/Documents/$dirname/
+touch ~/Documents/$dirname/settings.txt
 
 # kill roscore
 pid=$(lsof | grep roscore | sed "s/.*roscore//" | sed "2,\$d" | sed "s/$USERNAME.*//")
