@@ -1,1 +1,2 @@
 export ROS_MASTER_URI=localhost:11311
+roscore
