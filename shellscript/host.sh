@@ -6,11 +6,11 @@ sleep 15s
 roscd ros1_test/launch
 
 # PUBLISHER
-run_file=node_num_test_pub.py
+run_file=delay_pub.py
 rosrun ros1_test $run_file
 
 # SUBSCRIBER
-# run_file=node_num_test_sub.py
+# run_file=delay_sub.py
 # timeout -s SIGINT 100s rosrun ros1_test $run_file
 # cd ~/Documents
 # dirname=result_$(date "+%Y%m%d_%H%M%S")
@@ -25,8 +25,8 @@ rosrun ros1_test $run_file
 # touch ~/Documents/$dirname/settings.txt
 
 # INTRA-COMPUTER
-# gnome-terminal -- sh -c "rosrun ros1_test node_num_test_pub.py"
-# run_file=node_num_test_sub.py
+# gnome-terminal -- sh -c "rosrun ros1_test delay_pub.py"
+# run_file=delay_sub.py
 # timeout -s SIGINT 100s rosrun ros1_test $run_file
 # cd ~/Documents
 # dirname=result_$(date "+%Y%m%d_%H%M%S")
