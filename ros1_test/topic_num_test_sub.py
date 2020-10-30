@@ -10,7 +10,7 @@ from std_msgs.msg import Float64
 class topic_num_test_sub(object):
 
     def __init__(self):
-        self.num = int(rospy.get_param('~node_num'))
+        self.num = int(rospy.get_param('~topic_num'))
         self.num_list = [str(num) for num in range(self.num)]
         sub = {}
         for number in self.num_list:
