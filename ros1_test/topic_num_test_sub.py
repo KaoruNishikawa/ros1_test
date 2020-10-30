@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-node_num = "topic_num_test_sub"
+node_name = "topic_num_test_sub"
 
 import rospy
 import time
