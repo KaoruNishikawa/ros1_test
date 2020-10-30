@@ -8,3 +8,6 @@ timeout -s SIGINT 100s roslaunch launch_delay_pub.launch
 
 # SUBSCRIBER
 # roslaunch launch_delay_sub.launch
+
+# INTRA-COMPUTER
+# roslaunch launch_delay_pubsub.launch
