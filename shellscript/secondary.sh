@@ -6,10 +6,12 @@ export ROS_MASTER_URI=http://192.168.101.16:11311
 roscd ros1_test/launch
 
 # PUBLISHER
-roslaunch launch_delay_pub.launch
+launch_file=launch_delay_pub.launch
+roslaunch $launch_file
 
 # SUBSCRIBER
-# timeout -s SIGINT 100s roslaunch launch_delay_sub.launch
+# launch_file=launch_delay_sub.launch
+# timeout -s SIGINT 100s roslaunch $launch_file
 # cd ~/Documents
 # dirname=result_$(date "+%Y%m%d_%H%M%S")
 # mkdir -p $dirname/data
@@ -24,7 +26,8 @@ roslaunch launch_delay_pub.launch
 # touch ~/Documents/$dirname/settings.txt
 
 # INTRA-COMPUTER
-# timeout -s SIGINT 100s roslaunch launch_delay_pubsub.launch
+# launch_file=launch_delay_pubsub.launch
+# timeout -s SIGINT 100s roslaunch $launch_file
 # cd ~/Documents
 # dirname=result_$(date "+%Y%m%d_%H%M%S")
 # mkdir -p $dirname/data
