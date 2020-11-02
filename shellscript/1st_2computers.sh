@@ -67,7 +67,7 @@ sleep 15s
 
 # clean
 cd ~/Documents
-dirname=result_$(date "+%Y%m%d_%H%M%S")
+dirname=result_$(date "+%Y%m%d_%H%M%S")_1st
 mkdir -p $dirname/data
 mv delay_* ./$dirname/data
 

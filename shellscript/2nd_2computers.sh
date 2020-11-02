@@ -68,7 +68,7 @@ mv -i test_node_num_1.txt delay_$mode.txt && :
 
 # clean
 cd ~/Documents
-dirname=result_$(date "+%Y%m%d_%H%M%S")
+dirname=result_$(date "+%Y%m%d_%H%M%S")_2nd
 mkdir -p $dirname/data
 mv delay_* ./$dirname/data
 
