@@ -20,7 +20,7 @@ echo START
 
 export ROS_HOSTNAME=$(hostname -I)
 uri=http://$master:11311
-export ROS_MASTER_URI=${uri// /}
+export ROS_MASTER_URI=$(echo $uri | sed "s/\s//g")
 
 sleep 3s
 
