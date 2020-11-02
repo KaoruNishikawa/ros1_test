@@ -19,7 +19,7 @@ sleep 1s
 echo START
 
 export ROS_HOSTNAME=$(hostname -I)
-export ROS_MASTER_URI=http://$master:11311
+export ROS_MASTER_URI=http://$master\:11311
 
 sleep 3s
 
