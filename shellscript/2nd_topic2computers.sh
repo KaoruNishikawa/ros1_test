@@ -1,4 +1,5 @@
 num=$1
+node_num=`printf "%03g" $num`
 if [ $(hostname -I) = '192.168.101.15' ] ; then
     master=192.168.101.16
 elif [ $(hostname -I) = '192.168.101.16' ] ; then
@@ -59,7 +60,7 @@ sleep 5s
 timeout -s SIGINT 100s roslaunch auto_generated_S.launch
 sleep 20s
 cd ~/Documents
-mv -i test_node_num_999.txt delay_$mode.txt && :
+mv -i test_node_num_999.txt delay_$node_num.txt && :
 
 echo SM_START: >> ~/Documents/$dirname/settings.txt
 echo $(date "+s") >> ~/Documents/$dirname/settings.txt
@@ -87,13 +88,13 @@ sleep 1s
 timeout -s SIGINT 100s roslaunch auto_generated_T.launch
 sleep 15s
 cd ~/Documents
-mv -i test_node_num_999.txt delay_$mode.txt && :
+mv -i test_node_num_999.txt delay_$node_num.txt && :
 
 # clean
 cd ~/Documents
 dirname=result_$(date "+%Y%m%d_%H%M%S")_2nd
 mkdir -p $dirname/data
-mv delay_* ./$dirname/data
+mv delay_* ./$dirname/data/
 
 # record settings
 roscd ros1_test/shellscript
