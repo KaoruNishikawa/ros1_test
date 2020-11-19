@@ -42,7 +42,7 @@ roscd ros1_test/shellscript/tools
 echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
-timeout -s SIGINT 100s roslaunch auto_generated_N.launch
+timeout -s SIGINT 100s roslaunch auto_generated_Ni.launch
 sleep 15s
 cd ~/Documents
 mv test_node_num_999.txt delay_${node_num}_MM.txt && :
@@ -60,7 +60,7 @@ echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
 # buffer=5s
-timeout -s SIGINT 110s roslaunch auto_generated_N.launch
+timeout -s SIGINT 110s roslaunch auto_generated_Np.launch
 sleep 15s # buffer=5s
 cd ~/Documents
 #
@@ -78,7 +78,7 @@ echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
 sleep 10s
-timeout -s SIGINT 100s roslaunch auto_generated_N.launch
+timeout -s SIGINT 100s roslaunch auto_generated_Ns.launch
 sleep 25s
 cd ~/Documents
 mv test_node_num_999.txt delay_${node_num}_SM.txt && :
