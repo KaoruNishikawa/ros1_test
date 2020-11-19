@@ -59,7 +59,7 @@ roscd ros1_test/shellscript/tools
 echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
-sleep 5s
+sleep 20s
 timeout -s SIGINT 100s roslaunch auto_generated_Ns.launch
 sleep 20s
 cd ~/Documents
@@ -77,8 +77,8 @@ roscd ros1_test/shellscript/tools
 echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
-# buffer=10s
-timeout -s SIGINT 120s roslaunch auto_generated_Np.launch
+# buffer=20s
+timeout -s SIGINT 140s roslaunch auto_generated_Np.launch
 sleep 15s # buffer=10s
 cd ~/Documents
 #
