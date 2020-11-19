@@ -63,10 +63,10 @@ sleep 5s
 timeout -s SIGINT 100s roslaunch auto_generated_N.launch
 sleep 20s
 cd ~/Documents
-mv -i test_node_num_999.txt delay_${node_num}_MS.txt && :
-mv -i cpu_used.txt cpu_used_${node_num}_MS.txt && :
-mv -i mem_used.txt mem_used_${node_num}_MS.txt && :
-mv -i net_count.txt net_count_${node_num}_MS.txt && :
+mv test_node_num_999.txt delay_${node_num}_MS.txt && :
+mv cpu_used.txt cpu_used_${node_num}_MS.txt && :
+mv mem_used.txt mem_used_${node_num}_MS.txt && :
+mv net_count.txt net_count_${node_num}_MS.txt && :
 
 echo SM_START: >> ~/Documents/$dirname/settings.txt
 echo $(date "+s") >> ~/Documents/$dirname/settings.txt
@@ -80,11 +80,11 @@ sleep 1s
 # buffer=10s
 timeout -s SIGINT 120s roslaunch auto_generated_N.launch
 sleep 15s # buffer=10s
+cd ~/Documents
 #
-#
-#
-#
-#
+mv cpu_used.txt cpu_used_${node_num}_SM.txt && :
+mv mem_used.txt mem_used_${node_num}_SM.txt && :
+mv net_count.txt net_count_${node_num}_SM.txt && :
 
 echo SS_START: >> ~/Documents/$dirname/settings.txt
 echo $(date "+s") >> ~/Documents/$dirname/settings.txt
@@ -97,10 +97,10 @@ sleep 1s
 timeout -s SIGINT 100s roslaunch auto_generated_N.launch
 sleep 15s
 cd ~/Documents
-mv -i test_node_num_999.txt delay_${node_num}_SS.txt && :
-mv -i cpu_used.txt cpu_used_${node_num}_SS.txt && :
-mv -i mem_used.txt mem_used_${node_num}_SS.txt && :
-mv -i net_count.txt net_count_${node_num}_SS.txt && :
+mv test_node_num_999.txt delay_${node_num}_SS.txt && :
+mv cpu_used.txt cpu_used_${node_num}_SS.txt && :
+mv mem_used.txt mem_used_${node_num}_SS.txt && :
+mv net_count.txt net_count_${node_num}_SS.txt && :
 
 # clean
 cd ~/Documents
