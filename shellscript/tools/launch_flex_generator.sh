@@ -74,13 +74,13 @@ elif [ $mode = 'N' ] ; then
 fi
 ##########################################################
 # RECORDER
-echo "    <node pkg='ros1_test' name='cpu_checker' type='node_num_test_cpu.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='mem_checker' type='node_num_test_mem.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='net_checker' type='node_num_test_net.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='delay_test_pub' type='node_num_test_pub.py'>" >> $launch_file
+echo "    <node pkg='ros1_test' name='cpu_checker_$mode' type='node_num_test_cpu.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='mem_checker_$mode' type='node_num_test_mem.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='net_checker_$mode' type='node_num_test_net.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
 echo "        <param name='node_num' value='999' />" >> $launch_file
 echo "    </node>" >> $launch_file
-echo "    <node pkg='ros1_test' name='delay_test_sub' type='node_num_test_sub.py'>" >> $launch_file
+echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
 echo "        <param name='node_num' value='999' />" >> $launch_file
 echo "    </node>" >> $launch_file
 # end generate 
