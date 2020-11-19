@@ -87,6 +87,7 @@ elif [ $mode = 'Ns' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
+    node_num_=$((node_num　/　2))
     for i in `seq $node_num_`
     do
         echo "    <node pkg='ros1_test' name='dummy_node_${i}_$mode' type='dummy_node.py'>" >> $launch_file
