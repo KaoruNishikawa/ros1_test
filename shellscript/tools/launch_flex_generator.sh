@@ -60,7 +60,18 @@ elif [ $mode = 'S' ] ; then
     echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
     echo "    </node>" >> $launch_file
 #
-elif [ $mode = 'Nm' ] ; then
+elif [ $mode = 'Ni' ] ; then
+########################## NODE ##########################
+# $i is for # of nodes, and node name
+# DUMMY NODE
+    for i in `seq $node_num`
+    do
+        echo "    <node pkg='ros1_test' name='dummy_node_$i_$mode' type='dummy_node.py'>" >> $launch_file
+        echo "        <param name='node_num' value='$i' />" >> $launch_file
+        echo "    </node>" >> $launch_file
+    done
+#
+elif [ $mode = 'Np' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
@@ -88,11 +99,44 @@ fi
 echo "    <node pkg='ros1_test' name='cpu_checker_$mode' type='node_num_test_cpu.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='mem_checker_$mode' type='node_num_test_mem.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='net_checker_$mode' type='node_num_test_net.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
-echo "        <param name='node_num' value='999' />" >> $launch_file
-echo "    </node>" >> $launch_file
-echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
-echo "        <param name='node_num' value='999' />" >> $launch_file
-echo "    </node>" >> $launch_file
+if [ $mode = 'PS' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+    echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+elif [ $mode = 'T' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+    echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+elif [ $mode = 'P' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+elif [ $mode = 'S' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+elif [ $mode = 'Ni' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+    echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+elif [ $mode = 'Np' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_pub_$mode' type='node_num_test_pub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+elif [ $mode = 'Ns' ] ; then
+    echo "    <node pkg='ros1_test' name='delay_test_sub_$mode' type='node_num_test_sub.py'>" >> $launch_file
+    echo "        <param name='node_num' value='999' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+fi
+#
 # end generate 
 echo "</launch>" >> $launch_file

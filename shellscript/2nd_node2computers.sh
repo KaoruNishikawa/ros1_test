@@ -38,7 +38,7 @@ echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ############ MASTER TO MASTER ############
 # mode=MM
 roscd ros1_test/shellscript/tools
-. launch_flex_generator.sh $num Ns
+. launch_flex_generator.sh $num Ni
 echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
@@ -73,7 +73,7 @@ echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ########### SECONDARY TO MASTER ##########
 # mode=SM
 roscd ros1_test/shellscript/tools
-. launch_flex_generator.sh $num Ns
+. launch_flex_generator.sh $num Np
 echo launch file auto-generated
 roscd ros1_test/launch
 sleep 1s
@@ -91,7 +91,7 @@ echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ######### SECONDARY TO SECONDARY #########
 mode=SS
 roscd ros1_test/shellscript/tools
-. launch_flex_generator.sh $num Ns
+. launch_flex_generator.sh $num Ni
 echo launch file auto-generated
 sleep 1s
 timeout -s SIGINT 100s roslaunch auto_generated_N.launch
