@@ -75,7 +75,8 @@ elif [ $mode = 'Np' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
-    for i in `seq $node_num`
+    node_num_=$((node_num　/　2))
+    for i in `seq $node_num_`
     do
         echo "    <node pkg='ros1_test' name='dummy_node_${i}_$mode' type='dummy_node.py'>" >> $launch_file
         echo "        <param name='node_num' value='$i' />" >> $launch_file
@@ -86,7 +87,7 @@ elif [ $mode = 'Ns' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
-    for i in `seq $node_num`
+    for i in `seq $node_num_`
     do
         echo "    <node pkg='ros1_test' name='dummy_node_${i}_$mode' type='dummy_node.py'>" >> $launch_file
         echo "        <param name='node_num' value='$i' />" >> $launch_file
