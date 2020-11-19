@@ -6,6 +6,9 @@ elif [ $(hostname -I) = '192.168.101.16' ] ; then
 else
     exit 1
 fi
+touch ~/Documents/$dirname/settings.txt
+echo $(hostname -I) >> ~/Documents/$dirname/settings.txt
+echo secondary >> ~/Documents/$dirname/settings.txt
 
 #
 #
@@ -29,6 +32,8 @@ sleep 3s
 
 sleep 5s
 
+echo MM_START: >> ~/Documents/$dirname/settings.txt
+echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ############ MASTER TO MASTER ############
 # mode=MM
 roscd ros1_test/shellscript/tools
@@ -41,6 +46,8 @@ sleep 15s
 #
 #
 
+echo MS_START: >> ~/Documents/$dirname/settings.txt
+echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ########### MASTER TO SECONDARY ##########
 mode=MS
 roscd ros1_test/shellscript/tools
@@ -54,6 +61,8 @@ sleep 20s
 cd ~/Documents
 mv -i test_node_num_1.txt delay_$mode.txt && :
 
+echo SM_START: >> ~/Documents/$dirname/settings.txt
+echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ########### SECONDARY TO MASTER ##########
 # mode=SM
 roscd ros1_test/shellscript/tools
@@ -67,6 +76,8 @@ sleep 15s # buffer=10s
 #
 #
 
+echo SS_START: >> ~/Documents/$dirname/settings.txt
+echo $(date "+s") >> ~/Documents/$dirname/settings.txt
 ######### SECONDARY TO SECONDARY #########
 mode=SS
 roscd ros1_test/shellscript/tools
@@ -92,8 +103,8 @@ mkdir ~/Documents/$dirname/scripts
 cp -r ../ros1_test/* ~/Documents/$dirname/scripts/
 cp ../CMakeLists.txt ~/Documents/$dirname/
 cp ../package.xml ~/Documents/$dirname/
-touch ~/Documents/$dirname/settings.txt
-echo "$(hostname -I) secondary" >> ~/Documents/$dirname/settings.txt
+mkdir ~/Documents/$dirname/stats
+cp -r /var/log/ntpstats/* ~/Documents/$dirname/stats/
 
 # try : kill
 # roscore
