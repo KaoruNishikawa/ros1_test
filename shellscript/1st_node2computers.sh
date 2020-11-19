@@ -46,6 +46,9 @@ timeout -s SIGINT 100s roslaunch auto_generated_N.launch
 sleep 15s
 cd ~/Documents
 mv -i test_node_num_999.txt delay_${node_num}_MM.txt && :
+mv -i cpu_used.txt cpu_used_${node_num}_MM.txt && :
+mv -i mem_used.txt mem_used_${node_num}_MM.txt && :
+mv -i net_count.txt net_count_${node_num}_MM.txt && :
 
 echo MS_START: >> ~/Documents/$dirname/settings.txt
 echo $(date "+s") >> ~/Documents/$dirname/settings.txt
@@ -59,6 +62,9 @@ sleep 1s
 # buffer=5s
 timeout -s SIGINT 110s roslaunch auto_generated_N.launch
 sleep 15s # buffer=5s
+#
+#
+#
 #
 #
 
@@ -76,6 +82,9 @@ timeout -s SIGINT 100s roslaunch auto_generated_N.launch
 sleep 25s
 cd ~/Documents
 mv -i test_node_num_999.txt delay_${node_num}_SM.txt && :
+mv -i cpu_used.txt cpu_used_${node_num}_SM.txt && :
+mv -i mem_used.txt mem_used_${node_num}_SM.txt && :
+mv -i net_count.txt net_count_${node_num}_SM.txt && :
 
 echo SS_START: >> ~/Documents/$dirname/settings.txt
 echo $(date "+s") >> ~/Documents/$dirname/settings.txt
@@ -89,12 +98,19 @@ sleep 100s
 sleep 15s
 #
 #
+#
+#
+#
 
 # clean
 cd ~/Documents
 dirname=result_$(date "+%Y%m%d_%H%M%S")_1st
 mkdir -p $dirname/data
 mv delay_* ./$dirname/data/
+mv cpu_used_* ./$dirname/data
+mv mem_used_* ./$dirname/data
+mv net_count_* ./$dirname/data
+mv ~/Documents/settings.txt ~/Documents/$dirname/
 
 # record settings
 roscd ros1_test/shellscript
@@ -106,7 +122,6 @@ cp ../CMakeLists.txt ~/Documents/$dirname/
 cp ../package.xml ~/Documents/$dirname/
 mkdir ~/Documents/$dirname/stats
 cp -r /var/log/ntpstats/* ~/Documents/$dirname/stats/
-mv ~/Documents/settings.txt ~/Documents/$dirname/
 
 pid=$(lsof | grep roscore | sed "s/.*roscore//" | sed "2,\$d" | sed "s/$USERNAME.*//")
 kill -SIGINT $pid
