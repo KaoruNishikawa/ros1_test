@@ -32,7 +32,7 @@ if [ $2 = 'PS' ] ; then
         echo "    </node>" >> $launch_file
     done
 #
-elif [$2 = 'P'] ; then
+elif [ $2 = 'P' ] ; then
 ########################## TOPIC #########################
 # $topicnum is # of publishers/subscriptions a node create
     # PUBLISHER
@@ -40,7 +40,7 @@ elif [$2 = 'P'] ; then
     echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
     echo "    </node>" >> $launch_file
 #
-elif [$2 = 'S'] ; then
+elif [ $2 = 'S' ] ; then
 ########################## TOPIC #########################
 # $topicnum is # of publishers/subscriptions a node create
     # SUBSCRIBER
@@ -48,7 +48,7 @@ elif [$2 = 'S'] ; then
     echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
     echo "    </node>" >> $launch_file
 #
-elif [$2 = 'N'] ; then
+elif [ $2 = 'N' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
@@ -66,10 +66,10 @@ echo "    <node pkg='ros1_test' name='cpu_checker' type='node_num_test_cpu.py' /
 echo "    <node pkg='ros1_test' name='mem_checker' type='node_num_test_mem.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='net_checker' type='node_num_test_net.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='delay_test_pub' type='node_num_test_pub.py'>" >> $launch_file
-echo "        <param name='node_num' value='0' />" >> $launch_file
+echo "        <param name='node_num' value='999' />" >> $launch_file
 echo "    </node>" >> $launch_file
 echo "    <node pkg='ros1_test' name='delay_test_sub' type='node_num_test_sub.py'>" >> $launch_file
-echo "        <param name='node_num' value='0' />" >> $launch_file
+echo "        <param name='node_num' value='999' />" >> $launch_file
 echo "    </node>" >> $launch_file
 # end generate 
 echo "</launch>" >> $launch_file
