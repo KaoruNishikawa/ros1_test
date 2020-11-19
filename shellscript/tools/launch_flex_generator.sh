@@ -60,13 +60,24 @@ elif [ $mode = 'S' ] ; then
     echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
     echo "    </node>" >> $launch_file
 #
-elif [ $mode = 'N' ] ; then
+elif [ $mode = 'Nm' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
     for i in `seq $node_num`
     do
-        echo "    <node pkg='ros1_test' name='dummy_node_$i' type='dummy_node.py'>" >> $launch_file
+        echo "    <node pkg='ros1_test' name='dummy_node_$i_$mode' type='dummy_node.py'>" >> $launch_file
+        echo "        <param name='node_num' value='$i' />" >> $launch_file
+        echo "    </node>" >> $launch_file
+    done
+#
+elif [ $mode = 'Ns' ] ; then
+########################## NODE ##########################
+# $i is for # of nodes, and node name
+# DUMMY NODE
+    for i in `seq $node_num`
+    do
+        echo "    <node pkg='ros1_test' name='dummy_node_$i_$mode' type='dummy_node.py'>" >> $launch_file
         echo "        <param name='node_num' value='$i' />" >> $launch_file
         echo "    </node>" >> $launch_file
     done
