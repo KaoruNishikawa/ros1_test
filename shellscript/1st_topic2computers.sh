@@ -106,6 +106,7 @@ cp ../CMakeLists.txt ~/Documents/$dirname/
 cp ../package.xml ~/Documents/$dirname/
 mkdir ~/Documents/$dirname/stats
 cp -r /var/log/ntpstats/* ~/Documents/$dirname/stats/
+mv ~/Documents/settings.txt ~/Documents/$dirname/
 
 pid=$(lsof | grep roscore | sed "s/.*roscore//" | sed "2,\$d" | sed "s/$USERNAME.*//")
 kill -SIGINT $pid
