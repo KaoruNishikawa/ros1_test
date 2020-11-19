@@ -59,7 +59,7 @@ sleep 5s
 timeout -s SIGINT 100s roslaunch auto_generated_N.launch
 sleep 20s
 cd ~/Documents
-mv -i test_node_num_1.txt delay_$mode.txt && :
+mv -i test_node_num_999.txt delay_$mode.txt && :
 
 echo SM_START: >> ~/Documents/$dirname/settings.txt
 echo $(date "+s") >> ~/Documents/$dirname/settings.txt
@@ -87,7 +87,7 @@ sleep 1s
 timeout -s SIGINT 100s roslaunch auto_generated_N.launch
 sleep 15s
 cd ~/Documents
-mv -i test_node_num_1.txt delay_$mode.txt && :
+mv -i test_node_num_999.txt delay_$mode.txt && :
 
 # clean
 cd ~/Documents
