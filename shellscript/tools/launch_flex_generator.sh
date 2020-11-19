@@ -6,7 +6,7 @@ mode=$2
 
 # specify which launch file to edit
 roscd ros1_test/launch
-launch_file=auto_generated_$2.launch
+launch_file=auto_generated_$mode.launch
 
 # delete present
 sed -i '/^/d' $launch_file
@@ -14,7 +14,7 @@ sed -i '/^/d' $launch_file
 # generate
 echo "<launch>" >> $launch_file
 #
-if [ $2 = 'PS' ] ; then
+if [ $mode = 'PS' ] ; then
 ##################### TOPIC AND NODE #####################
 # $i is for # of pub/sub pairs, and node name
 # PUBLISHER
@@ -32,7 +32,7 @@ if [ $2 = 'PS' ] ; then
         echo "    </node>" >> $launch_file
     done
 #
-elif [ $2 = 'P' ] ; then
+elif [ $mode = 'P' ] ; then
 ########################## TOPIC #########################
 # $topicnum is # of publishers/subscriptions a node create
     # PUBLISHER
@@ -40,7 +40,7 @@ elif [ $2 = 'P' ] ; then
     echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
     echo "    </node>" >> $launch_file
 #
-elif [ $2 = 'S' ] ; then
+elif [ $mode = 'S' ] ; then
 ########################## TOPIC #########################
 # $topicnum is # of publishers/subscriptions a node create
     # SUBSCRIBER
@@ -48,7 +48,7 @@ elif [ $2 = 'S' ] ; then
     echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
     echo "    </node>" >> $launch_file
 #
-elif [ $2 = 'N' ] ; then
+elif [ $mode = 'N' ] ; then
 ########################## NODE ##########################
 # $i is for # of nodes, and node name
 # DUMMY NODE
