@@ -7,9 +7,9 @@ elif [ $(hostname -I) = '192.168.101.16' ] ; then
 else
     exit 1
 fi
-touch ~/Documents/$dirname/settings.txt
-echo $(hostname -I) >> ~/Documents/$dirname/settings.txt
-echo secondary >> ~/Documents/$dirname/settings.txt
+touch ~/Documents/settings.txt
+echo $(hostname -I) >> ~/Documents/settings.txt
+echo secondary >> ~/Documents/settings.txt
 
 #
 #
@@ -33,8 +33,8 @@ sleep 3s
 
 sleep 5s
 
-echo MM_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo MM_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ############ MASTER TO MASTER ############
 # mode=MM
 roscd ros1_test/shellscript/tools
@@ -50,8 +50,8 @@ sleep 15s
 #
 #
 
-echo MS_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo MS_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ########### MASTER TO SECONDARY ##########
 mode=MS
 roscd ros1_test/shellscript/tools
@@ -68,8 +68,8 @@ mv cpu_used.txt cpu_used_${node_num}_MS.txt && :
 mv mem_used.txt mem_used_${node_num}_MS.txt && :
 mv net_count.txt net_count_${node_num}_MS.txt && :
 
-echo SM_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo SM_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ########### SECONDARY TO MASTER ##########
 # mode=SM
 roscd ros1_test/shellscript/tools
@@ -86,8 +86,8 @@ mv cpu_used.txt cpu_used_${node_num}_SM.txt && :
 mv mem_used.txt mem_used_${node_num}_SM.txt && :
 mv net_count.txt net_count_${node_num}_SM.txt && :
 
-echo SS_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo SS_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ######### SECONDARY TO SECONDARY #########
 mode=SS
 roscd ros1_test/shellscript/tools

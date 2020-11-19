@@ -7,9 +7,9 @@ master=$(hostname -I)
 #
 #
 #
-touch ~/Documents/$dirname/settings.txt
-echo $(hostname -I) >> ~/Documents/$dirname/settings.txt
-echo master >> ~/Documents/$dirname/settings.txt
+touch ~/Documents/settings.txt
+echo $(hostname -I) >> ~/Documents/settings.txt
+echo master >> ~/Documents/settings.txt
 
 echo "start 2nd_2computers in 5 sec."
 sleep 1s
@@ -33,8 +33,8 @@ gnome-terminal -- sh -c "roscore ; bash"
 
 sleep 5s
 
-echo MM_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo MM_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ############ MASTER TO MASTER ############
 mode=MM
 roscd ros1_test/shellscript/tools
@@ -50,8 +50,8 @@ mv cpu_used.txt cpu_used_${node_num}_MM.txt && :
 mv mem_used.txt mem_used_${node_num}_MM.txt && :
 mv net_count.txt net_count_${node_num}_MM.txt && :
 
-echo MS_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo MS_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ########### MASTER TO SECONDARY ##########
 # mode=MS
 roscd ros1_test/shellscript/tools
@@ -68,8 +68,8 @@ mv cpu_used.txt cpu_used_${node_num}_MS.txt && :
 mv mem_used.txt mem_used_${node_num}_MS.txt && :
 mv net_count.txt net_count_${node_num}_MS.txt && :
 
-echo SM_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo SM_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ########### SECONDARY TO MASTER ##########
 mode=SM
 roscd ros1_test/shellscript/tools
@@ -86,8 +86,8 @@ mv cpu_used.txt cpu_used_${node_num}_SM.txt && :
 mv mem_used.txt mem_used_${node_num}_SM.txt && :
 mv net_count.txt net_count_${node_num}_SM.txt && :
 
-echo SS_START: >> ~/Documents/$dirname/settings.txt
-echo $(date "+s") >> ~/Documents/$dirname/settings.txt
+echo SS_START: >> ~/Documents/settings.txt
+echo $(date "+s") >> ~/Documents/settings.txt
 ######### SECONDARY TO SECONDARY #########
 # mode=SS
 roscd ros1_test/shellscript/tools
