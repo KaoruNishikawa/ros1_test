@@ -32,6 +32,18 @@ if [ $mode = 'PS' ] ; then
         echo "    </node>" >> $launch_file
     done
 #
+elif [ $mode = 'T' ] ; then
+########################## TOPIC #########################
+# $topicnum is # of publishers/subscriptions a node create
+    # PUBLISHER
+    echo "    <node pkg='ros1_test' name='topic_num_test_pub' type='topic_num_test_pub.py'>" >> $launch_file
+    echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+    # SUBSCRIBER
+    echo "    <node pkg='ros1_test' name='topic_num_test_sub' type='topic_num_test_sub.py'>" >> $launch_file
+    echo "        <param name='topic_num' value='$topic_num' />" >> $launch_file
+    echo "    </node>" >> $launch_file
+#
 elif [ $mode = 'P' ] ; then
 ########################## TOPIC #########################
 # $topicnum is # of publishers/subscriptions a node create
