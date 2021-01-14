@@ -12,7 +12,7 @@ class node_num_test_sub(object):
     def __init__(self):
         self.num = int(rospy.get_param('~node_num'))
         self.topic_num = str(rospy.get_param('~topic_num'))
-        self.f = open(f"{os.environ['HOME']}/Documents/test_node_num_{self.num:03g}.txt", "w")
+        self.f = open(f"{os.environ['HOME']}/Documents/delay_{self.num:03g}.txt", "w")
         my_sub = rospy.Subscriber(f"/test/node_num_{self.topic_num}", Float64, self.sub_callback, queue_size=1)
         rospy.spin()
 
