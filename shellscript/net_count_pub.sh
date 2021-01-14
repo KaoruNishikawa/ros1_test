@@ -19,7 +19,7 @@ do
     . launch_generator_net_pub.sh $sub_num
     cd ../launch
     sleep 1s
-    timeout -s SIGINT 101s roslaunch $launch_pub
+    timeout -s SIGINT 100s roslaunch $launch_pub
     sleep 30s
 done
 
