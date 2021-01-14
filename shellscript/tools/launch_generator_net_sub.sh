@@ -25,7 +25,7 @@ done
 echo "    <node pkg='ros1_test' name='temp_checker_sub' type='check_temp.py' >" >> $launch_file
 echo "        <param name='node_num' value='${sub_num}' />" >> $launch_file
 echo "    </node>" >> $launch_file
-echo "    <node pkg='ros1_test' name='cpu_checker_sub' type='check_net.py' >" >> $launch_file
+echo "    <node pkg='ros1_test' name='cpu_checker_sub' type='check_cpu.py' >" >> $launch_file
 echo "        <param name='node_num' value='${sub_num}' />" >> $launch_file
 echo "    </node>" >> $launch_file
 echo "    <node pkg='ros1_test' name='mem_checker_sub' type='check_mem.py' >" >> $launch_file
