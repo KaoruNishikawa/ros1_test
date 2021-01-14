@@ -22,15 +22,15 @@ do
 done
 ##########################################################
 # RECORDER
-echo "    <node pkg='ros1_test' name='temp_checker' type='check_temp.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='net_checker' type='check_net.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='mem_checker' type='check_mem.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='net_checker' type='check_net.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='delay_pub' type='delay_pub.py'>" >> $launch_file
+echo "    <node pkg='ros1_test' name='temp_checker_sub' type='check_temp.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='net_checker_sub' type='check_net.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='mem_checker_sub' type='check_mem.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='net_checker_sub' type='check_net.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='delay_pub_sub' type='delay_pub.py'>" >> $launch_file
 echo "        <param name='node_num' value='${sub_num}' />" >> $launch_file
 echo "        <param name='topic_num' value='999' />" >> $launch_file
 echo "    </node>" >> $launch_file
-echo "    <node pkg='ros1_test' name='delay_sub' type='delay_sub.py'>" >> $launch_file
+echo "    <node pkg='ros1_test' name='delay_sub_sub' type='delay_sub.py'>" >> $launch_file
 echo "        <param name='node_num' value='${sub_num}' />" >> $launch_file
 echo "        <param name='topic_num' value='998' />" >> $launch_file
 echo "    </node>" >> $launch_file
