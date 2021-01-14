@@ -15,7 +15,7 @@ class dummy_sub(object):
         rospy.spin()
 
     def sub_callback(self, data):
-        length = len(data)
+        length = len(str(data))
         # cur_time = time.time()
         # send_time = timer.data
         # delta = cur_time - send_time

@@ -20,7 +20,7 @@ class node_num_test_pub(object):
         while not rospy.is_shutdown():
             cur_time = time.time()
             self.my_pub.publish(cur_time)
-            if self.num < 900:
+            if int(self.topic_num) < 900:
                 data = "a" * 1000
                 self.data_pub.publish(data)
             self.rate.sleep()
