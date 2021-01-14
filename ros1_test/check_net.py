@@ -13,8 +13,8 @@ node_name = "net_checker"
 class net_checker(object):
 
     def __init__(self):
-        self.num = str(rospy.get_param('~node_num'))
-        self.f_net = open(f"{os.environ['HOME']}/Documents/net_count_{self.num}.txt", "w")
+        self.num = int(rospy.get_param('~node_num'))
+        self.f_net = open(f"{os.environ['HOME']}/Documents/net_count_{self.num:03g}.txt", "w")
         self.rate = rospy.Rate(0.5)
 
     def checker(self):

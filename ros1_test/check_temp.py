@@ -13,8 +13,8 @@ node_name = "temp_checker"
 class temp_checker(object):
 
     def __init__(self):
-        self.num = str(rospy.get_param('~node_num'))
-        self.f_temp = open(f"{os.environ['HOME']}/Documents/cpu_temp_{self.num}.txt", "w")
+        self.num = int(rospy.get_param('~node_num'))
+        self.f_temp = open(f"{os.environ['HOME']}/Documents/cpu_temp_{self.num:03g}.txt", "w")
         self.rate = rospy.Rate(0.5)
 
     def checker(self):

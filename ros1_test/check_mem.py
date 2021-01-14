@@ -13,8 +13,8 @@ node_name = "mem_checker"
 class mem_checker(object):
 
     def __init__(self):
-        self.num = str(rospy.get_param('~node_num'))
-        self.f_mem = open(f"{os.environ['HOME']}/Documents/mem_used_{self.num}.txt", "w")
+        self.num = int(rospy.get_param('~node_num'))
+        self.f_mem = open(f"{os.environ['HOME']}/Documents/mem_used_{self.num:03g}.txt", "w")
         self.rate = rospy.Rate(0.5)
 
     def checker(self):
