@@ -15,7 +15,7 @@ sleep 1s
 
 for sub_num in 1 2 3 4 5 10 30 50 100
 do
-    cd ~/ros2/src/ros2_test/shellscript/tools
+    roscd ros1_test/shellscript/tools
     . launch_generator_net_sub.sh $sub_num
     sleep 1s
     timeout -s SIGINT 100s roslaunch $launch_sub
