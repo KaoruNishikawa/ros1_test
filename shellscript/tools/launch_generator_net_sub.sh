@@ -17,7 +17,7 @@ echo "<launch>" >> $launch_file
 for i in `seq $sub_num`
 do
     echo "    <node pkg='ros1_test' name='dummy_sub_$i' type='dummy_sub.py'>" >> $launch_file
-    echo "        <param name='node_num' value='$i' />" >> $launch_file
+    echo "        <param name='node_num' value='0' />" >> $launch_file
     echo "    </node>" >> $launch_file
 done
 ##########################################################
