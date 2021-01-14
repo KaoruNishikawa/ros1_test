@@ -12,7 +12,7 @@ class node_num_test_pub(object):
         self.num = int(rospy.get_param('~node_num'))
         self.topic_num = str(rospy.get_param('~topic_num'))
         self.my_pub = rospy.Publisher(f"/test/node_num_{self.topic_num}", Float64, queue_size=1)
-        if self.num < 900:
+        if self.topic_num < 900:
             self.data_pub = rospy.Publisher(f"/test/data_{self.num}", String, queue_size=1)
         self.rate = rospy.Rate(10)
 

@@ -11,7 +11,7 @@ class dummy_sub(object):
 
     def __init__(self):
         self.num = str(rospy.get_param('~node_num'))
-        my_sub = rospy.Subscriber("/test/node_num_"+self.num, String, self.sub_callback, queue_size=1)
+        my_sub = rospy.Subscriber("/test/data_"+self.num, String, self.sub_callback, queue_size=1)
         rospy.spin()
 
     def sub_callback(self, data):
