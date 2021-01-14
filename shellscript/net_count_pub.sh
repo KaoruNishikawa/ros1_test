@@ -36,10 +36,11 @@ mv delay_* ./$dirname/data/
 # record settings
 mkdir -p $dirname/config
 roscd ros1_test
-cp -r * ./$dirname/config/
+cp -r ./* ~/Documents/$dirname/config/
+cd ~/Documents
 echo $(hostname -I) >> ./$dirname/ros1_configuration.txt
-echo $ROS_IP ./$dirname/ros1_configuration.txt
-echo $ROS_MASTER_URI ./$dirname/ros1_configuration.txt
+echo $ROS_IP >> ./$dirname/ros1_configuration.txt
+echo $ROS_MASTER_URI >> ./$dirname/ros1_configuration.txt
 
 # record ntp state
 mkdir -p $dirname/stats
