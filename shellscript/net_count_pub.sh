@@ -47,4 +47,4 @@ mkdir -p $dirname/stats
 cp -r /var/log/ntpstats/* ./$dirname/stats/
 
 # back to where I was
-cd ~/ros2/src/ros2_test/shellscript
+roscd ros1_test/shellscript
