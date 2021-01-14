@@ -27,7 +27,7 @@ echo "    </node>" >> $launch_file
 ##########################################################
 # RECORDER
 echo "    <node pkg='ros1_test' name='temp_checker_pub' type='check_temp.py' />" >> $launch_file
-echo "    <node pkg='ros1_test' name='net_checker_pub' type='check_net.py' />" >> $launch_file
+echo "    <node pkg='ros1_test' name='cpu_checker_pub' type='check_net.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='mem_checker_pub' type='check_mem.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='net_checker_pub' type='check_net.py' />" >> $launch_file
 echo "    <node pkg='ros1_test' name='delay_pub_pub' type='delay_pub.py'>" >> $launch_file
