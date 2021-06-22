@@ -5,7 +5,7 @@ setup(
     version="0.1.0",
     packages=["ros1_test"],
     data_files=[],
-    install_requires=["setuptools", "xarray-dataclasses >= 0.3", "ndradex >= 0.1"],
+    install_requires=["setuptools"],
     zip_safe=True,
     maintainer="Kaoru Nishikawa",
     maintainer_email="k.nishikawa@a.phys.nagoya-u.ac.jp",
